@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Education</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="idk.css">
+
+</head>
+<body>
+    <header>
+        <h1>Smart Education</h1>
+        <nav>
+            <div class="menu">
+                <ul>
+                    <li><a href="idk.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="assignments.html">Assignments</a></li>
+                    <li><a href="attendance.html">Attendance</a></li>
+                </ul>
+            </div>
+            <div class="user-profile">
+                <img id="profile-picture" src="bg.jpg" alt="Profile Picture">
+                <div class="user-menu">
+                    <span>Batch - 6</span>
+                    <ul>
+                        <li><a href="logon.html">Sign Out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="video-container">
+            <div class="video">
+                <video id="videoPlayer" controls>
+                    <source src="epik sax.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+        <div class="playlist">
+            <h2>Up Next</h2>
+            <ul>
+                <li>
+                    <a href="#" onclick="changeVideo('rickroll.mp4')">
+                        <img src="Screenshot 2024-04-17 072904.png" alt="Thumbnail for Video 1">
+                        <button class="fullscreen-btn" onclick="toggleFullscreen()">Fullscreen</button>
+                        <div class="video-info">
+                            <span class="video-title">Never gonna give you up</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="changeVideo('file_example_MP4_480_1_5MG.mp4')">
+                        <img src="Screenshot 2024-04-17 012814.png" alt="Thumbnail for Video 2">                        
+                        <button class="fullscreen-btn" onclick="toggleFullscreen()">Fullscreen</button>                 
+                            <div class="video-info">
+                                <span class="video-title">Earth spinning</span>
+                            </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="changeVideo('Untitled video - Made with Clipchamp.mp4')">
+                        <img src="Screenshot 2024-04-17 072353.png" alt="Thumbnail for Video 3">
+                        <button class="fullscreen-btn" onclick="toggleFullscreen()">Fullscreen</button>
+                        <div class="video-info">
+                            <span class="video-title">That's a lot of damage</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="changeVideo('Noisestorm - Crab Rave [Monstercat Release].mp4')">
+                        <img src="thumbnail6.png" alt="Thumbnail for Video 3">
+                        <button class="fullscreen-btn" onclick="toggleFullscreen()">Fullscreen</button>
+                        <div class="video-info">
+                            <span class="video-title">Crab Rave</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="changeVideo('iron man kid.mp4')">
+                        <img src="Screenshot 2024-05-15 111603.png" alt="Thumbnail for Video 4">
+                        <button class="fullscreen-btn" onclick="toggleFullscreen()">Fullscreen</button>
+                        <div class="video-info">
+                            <span class="video-title">Iron Man kid</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="changeVideo('tokyo drift (dog edition).mp4')">
+                        <img src="Screenshot 2024-05-15 112348.png" alt="Thumbnail for Video 4">
+                        <button class="fullscreen-btn" onclick="toggleFullscreen()">Fullscreen</button>
+                        <div class="video-info">
+                            <span class="video-title">Tokyo Drift (dogs edition)</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="changeVideo('sed violin.mp4')">
+                        <img src="Screenshot 2024-05-15 112308.png" alt="Thumbnail for Video 4">
+                        <button class="fullscreen-btn" onclick="toggleFullscreen()">Fullscreen</button>
+                        <div class="video-info">
+                            <span class="video-title">Sad violin</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="changeVideo('just an egg.mp4')">
+                        <img src="thumbnail7.png" alt="Thumbnail for Video 4">
+                        <button class="fullscreen-btn" onclick="toggleFullscreen()">Fullscreen</button>
+                        <div class="video-info">
+                            <span class="video-title">Just an egg</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="changeVideo('ladidadiba.mp4')">
+                        <img src="Screenshot 2024-05-15 112232.png" alt="Thumbnail for Video 4">
+                        <button class="fullscreen-btn" onclick="toggleFullscreen()">Fullscreen</button>
+                        <div class="video-info">
+                            <span class="video-title">labidabida</span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+    <script src="idk.js"></script>
+</body>
+</html>

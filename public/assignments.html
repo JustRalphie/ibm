@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Education</title>
+        <link rel="stylesheet" href="idk.css">
+</head>
+
+<body>
+    <header>
+        <h1>Smart Education</h1>
+        <nav>
+            <div class="menu">
+                <ul>
+                    <li><a href="idk.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="assignments.html">Assignments</a></li>
+                    <li><a href="attendance.html">Attendance</a></li>
+                </ul>
+            </div>
+            <div class="user-profile">
+                <img id="profile-picture" src="bg.jpg" alt="Profile Picture">
+                <div class="user-menu">
+                    <span>Batch - 6</span>
+                    <ul>
+                        <li><a href="logon.html">Sign Out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="assignments">
+            <h2>Assignments</h2>
+            <form id="assignmentForm">
+                <input type="text" id="assignmentTitle" placeholder="Assignment Title" required>
+                <textarea id="assignmentDescription" placeholder="Assignment Description" required></textarea>
+                <button type="submit">Add Assignment</button>
+            </form>
+            <div id="assignmentList"></div>
+        </section>
+    </main>
+    <script>
+        document.getElementById('assignmentForm').onsubmit = function (e) {
+            e.preventDefault();
+            const title = document.getElementById('assignmentTitle').value;
+            const description = document.getElementById('assignmentDescription').value;
+            const assignmentList = document.getElementById('assignmentList');
+
+            const assignmentDiv = document.createElement('div');
+            assignmentDiv.classList.add('assignment');
+            assignmentDiv.innerHTML = `
+                <h4>${title}</h4>
+                <p>${description}</p>
+                <input type="file" accept="application/pdf" required>
+                <button onclick="submitAssignment('${title}')">Submit Assignment</button>
+            `;
+            assignmentList.appendChild(assignmentDiv);
+            this.reset();
+        };
+
+        function submitAssignment(title) {
+            alert(`Assignment "${title}" submitted successfully!`);
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+    var profilePicture = document.getElementById("profile-picture");
+    var userMenu = document.querySelector(".user-menu");
+
+    profilePicture.addEventListener("click", function(event) {
+        event.stopPropagation();
+        userMenu.classList.toggle("show");
+    });
+
+document.body.addEventListener("click", function() {
+    if (userMenu.classList.contains("show")) {
+        userMenu.classList.remove("show");
+    }
+});
+});
+    </script>
+</body>
+
+</html>

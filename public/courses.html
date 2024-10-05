@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Education</title>
+    <link rel="stylesheet" href="idk.css">
+</head>
+
+<body>
+    <header>
+        <h1>Smart Education</h1>
+        <nav>
+            <div class="menu">
+                <ul>
+                    <li><a href="idk.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="assignments.html">Assignments</a></li>
+                    <li><a href="attendance.html">Attendance</a></li>
+                </ul>
+            </div>
+            <div class="user-profile">
+                <img id="profile-picture" src="bg.jpg" alt="Profile Picture">
+                <div class="user-menu">
+                    <span>Batch - 6</span>
+                    <ul>
+                        <li><a href="logon.html">Sign Out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="courses">
+            <h2>Available Courses</h2>
+            <!-- Courses will be dynamically inserted here -->
+        </section>
+    </main>
+    <script>
+        const courses = [
+            { title: "Course Title 1", description: "Description of course 1." },
+            { title: "Course Title 2", description: "Description of course 2." }
+        ];
+        function displayCourses() {
+            const courseSection = document.getElementById('courses');
+            courses.forEach((course, index) => {
+                const courseDiv = document.createElement('div');
+                courseDiv.classList.add('course');
+                courseDiv.innerHTML = `
+                    <h3>${course.title}</h3>
+                    <p>${course.description}</p>
+                    <button onclick="enroll(${index})">Enroll</button>
+                `;
+                courseSection.appendChild(courseDiv);
+            });
+        }
+
+        function enroll(courseIndex) {
+
+            const enrolledCourses = JSON.parse(localStorage.getItem('enrolledCourses')) || [];
+            const course = courses[courseIndex];
+
+            if (course.title == 'Course Title 1') {
+                window.open("home.html");
+            }
+
+
+            if (course.title == 'Course Title 2') {
+                window.open("trending.html");
+            }
+
+            if (!enrolledCourses.includes(course.title)) {
+                enrolledCourses.push(course.title);
+                localStorage.setItem('enrolledCourses', JSON.stringify(enrolledCourses));
+                alert(`You have successfully enrolled in "${course.title}"!`);
+            } else {
+                alert(`You are already enrolled in "${course.title}".`);
+            }
+        }
+        function init() {
+            displayCourses();
+        }
+
+        window.onload = init;
+
+        document.addEventListener("DOMContentLoaded", function() {
+    var profilePicture = document.getElementById("profile-picture");
+    var userMenu = document.querySelector(".user-menu");
+
+    profilePicture.addEventListener("click", function(event) {
+        event.stopPropagation();
+        userMenu.classList.toggle("show");
+    });
+
+document.body.addEventListener("click", function() {
+    if (userMenu.classList.contains("show")) {
+        userMenu.classList.remove("show");
+    }
+});
+});
+    </script>
+</body>
+
+</html>

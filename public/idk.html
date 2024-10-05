@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Education</title>
+    <link rel="stylesheet" href="idk.css">
+</head>
+<body>
+    <header>
+        <h1>Smart Education</h1>
+        <nav>
+            <div class="menu">
+                <ul>
+                    <li><a href="idk.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="assignments.html">Assignments</a></li>
+                    <li><a href="attendance.html">Attendance</a></li>
+                </ul>
+            </div>
+            <div class="user-profile">
+                <img id="profile-picture" src="bg.jpg" alt="Profile Picture">
+                <div class="user-menu">
+                    <span>Batch - 6</span>
+                    <ul>
+                        <li><a href="logon.html">Sign Out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="intro">
+            <h2>Welcome to Smart Education</h2>
+            <p>Your one-stop solution for innovative and engaging learning experiences. We offer a variety of courses designed to equip you with essential skills for the future.</p>
+            <button onclick="window.location.href='courses.html'">Explore Courses</button>
+        </section>
+
+        <section id="featured-courses">
+            <h2>Featured Courses</h2>
+            <div class="course-list">
+                <article class="course-card">
+                    <h3>Introduction to Programming</h3>
+                    <p>Learn the fundamentals of programming using Python. Perfect for beginners!</p>
+                </article>
+                <article class="course-card">
+                    <h3>Web Development Basics</h3>
+                    <p>Build your first website using HTML, CSS, and JavaScript.</p>
+                </article>
+                <article class="course-card">
+                    <h3>Data Science Essentials</h3>
+                    <p>Understand the basics of data analysis and machine learning.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="testimonials">
+            <h2>What Our Students Say</h2>
+            <blockquote>
+                <p>"Smart Education has transformed my learning experience. The courses are engaging and easy to follow!"</p>
+                <footer>- Sarah K.</footer>
+            </blockquote>
+            <blockquote>
+                <p>"I love how practical the courses are. I've gained skills that I can apply right away!"</p>
+                <footer>- David R.</footer>
+            </blockquote>
+        </section>
+
+        <section id="cta">
+            <h2>Join Us Today!</h2>
+            <p>Start your journey towards a brighter future with Smart Education. Sign up now and unlock a world of knowledge.</p>
+            <button onclick="window.location.href='sign op.html'">Sign Up</button>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var profilePicture = document.getElementById("profile-picture");
+            var userMenu = document.querySelector(".user-menu");
+
+            profilePicture.addEventListener("click", function(event) {
+                event.stopPropagation();
+                userMenu.classList.toggle("show");
+            });
+
+            document.body.addEventListener("click", function() {
+                if (userMenu.classList.contains("show")) {
+                    userMenu.classList.remove("show");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Education</title>
+        <link rel="stylesheet" href="idk.css">
+</head>
+
+<body>
+    <header>
+        <h1>Smart Education</h1>
+        <nav>
+            <div class="menu">
+                <ul>
+                    <li><a href="idk.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="assignments.html">Assignments</a></li>
+                    <li><a href="attendance.html">Attendance</a></li>
+                </ul>
+            </div>
+            <div class="user-profile">
+                <img id="profile-picture" src="bg.jpg" alt="Profile Picture">
+                <div class="user-menu">
+                    <span>Batch - 6</span>
+                    <ul>
+                        <li><a href="logon.html">Sign Out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="attendance">
+            <h2>Attendance Tracking</h2>
+            <button onclick="markAttendance()">Mark Attendance</button>
+            <div id="calendar" class="calendar"></div>
+            <div id="attendanceStatus"></div>
+        </section>
+    </main>
+    <script>
+        const attendanceRecord = new Set(); // To track attendance days
+        function createCalendar() {
+            const calendar = document.getElementById('calendar');
+            const daysInMonth = 30; // Simplified for demonstration
+            for (let i = 1; i <= daysInMonth; i++) {
+                const dayDiv = document.createElement('div');
+                dayDiv.classList.add('day');
+                dayDiv.textContent = i;
+                calendar.appendChild(dayDiv);
+            }
+        }
+
+        function highlightAttendance(day) {
+            if (attendanceRecord.has(day)) {
+                alert(`Attendance for day ${day} is already marked.`);
+            } else {
+                attendanceRecord.add(day);
+                const days = document.querySelectorAll('.day');
+                days[day - 1].classList.add('attended');
+                const user = JSON.parse(localStorage.getItem('user'));
+                const date = `${day}/${new Date().getMonth() + 1}/${new Date().getFullYear()}`;
+                document.getElementById('attendanceStatus').innerHTML += `<p>Attendance marked for ${user.name} on ${date}.</p>`;
+            }
+        }
+
+        function markAttendance() {
+            const currentDay = new Date().getDate();
+            highlightAttendance(currentDay);
+        }
+        function init() {
+            createCalendar();
+        }
+
+        window.onload = init;
+        document.addEventListener("DOMContentLoaded", function() {
+    var profilePicture = document.getElementById("profile-picture");
+    var userMenu = document.querySelector(".user-menu");
+
+    profilePicture.addEventListener("click", function(event) {
+        event.stopPropagation();
+        userMenu.classList.toggle("show");
+    });
+
+document.body.addEventListener("click", function() {
+    if (userMenu.classList.contains("show")) {
+        userMenu.classList.remove("show");
+    }
+});
+});
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Education</title>
+    <link rel="stylesheet" href="idk.css">
+    <style>
+        .video-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .video-card {
+            margin: 10px;
+            background: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            width: 300px;
+            height: auto;
+            /* Let the height adjust based on content */
+            color: #FFFFFF;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .thumbnail video {
+            width: 100%;
+            height: 150px;
+            /* Adjust the height for the video */
+            object-fit: cover;
+            /* Ensures the video covers the area without distortion */
+        }
+
+        .info {
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Smart Education</h1>
+        <nav>
+            <div class="menu">
+                <ul>
+                    <li><a href="idk.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="assignments.html">Assignments</a></li>
+                    <li><a href="attendance.html">Attendance</a></li>
+                </ul>
+            </div>
+            <div class="user-profile">
+                <img id="profile-picture" src="bg.jpg" alt="Profile Picture">
+                <div class="user-menu">
+                    <span>Batch - 6</span>
+                    <ul>
+                        <li><a href="logon.html">Sign Out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="video-list">
+            <article class="video-card">
+                <a href="vid1.html">
+                    <div class="thumbnail">
+                        <video controls>
+                            <source src="rickroll.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="info">
+                        <h2>Never gonna give you up</h2>
+                        <p>Rick Astley - never gonna give you up</p>
+                    </div>
+                </a>
+            </article>
+
+            <article class="video-card">
+                <a href="vid2.html">
+                    <div class="thumbnail">
+                        <video controls>
+                            <source src="file_example_MP4_480_1_5MG.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="info">
+                        <h2>Earth spinning</h2>
+                        <p>Spinning Earth</p>
+                    </div>
+                </a>
+            </article>
+
+            <article class="video-card">
+                <a href="vid3.html">
+                    <div class="thumbnail">
+                        <video controls>
+                            <source src="Untitled video - Made with Clipchamp.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="info">
+                        <h2>That's a lot of damage</h2>
+                        <p>So much damage</p>
+                    </div>
+                </a>
+            </article>
+
+            <article class="video-card">
+                <a href="vid4.html">
+                    <div class="thumbnail">
+                        <video controls>
+                            <source src="Noisestorm - Crab Rave [Monstercat Release].mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="info">
+                        <h2>Crab Rave</h2>
+                        <p>Crab Rave</p>
+                    </div>
+                </a>
+            </article>
+            <article class="video-card">
+                <a href="vid5.html">
+                    <div class="thumbnail">
+                        <video controls>
+                            <source src="epik sax.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="info">
+                        <h2>Epic Saxophone</h2>
+                        <p>Epic guy playing saxophone</p>
+                    </div>
+                </a>
+            </article>
+            <article class="video-card">
+                <a href="vid6.html">
+                    <div class="thumbnail">
+                        <video controls>
+                            <source src="iron man kid.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="info">
+                        <h2>Iron Man kid</h2>
+                        <p>Iron Man kid</p>
+                    </div>
+                </a>
+            </article>
+            <article class="video-card">
+                <a href="vid7.html">
+                    <div class="thumbnail">
+                        <video controls>
+                            <source src="tokyo drift (dog edition).mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="info">
+                        <h2>Tokyo Drift (dogs edition)</h2>
+                        <p>Dogs drifting through the house</p>
+                    </div>
+                </a>
+            </article>
+            <article class="video-card">
+                <a href="vid8.html">
+                    <div class="thumbnail">
+                        <video controls>
+                            <source src="sed violin.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="info">
+                        <h2>Sad violin</h2>
+                        <p>Sad violin</p>
+                    </div>
+                </a>
+            </article>
+        </section>
+    </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var profilePicture = document.getElementById("profile-picture");
+            var userMenu = document.querySelector(".user-menu");
+
+            profilePicture.addEventListener("click", function (event) {
+                event.stopPropagation();
+                userMenu.classList.toggle("show");
+            });
+
+            document.body.addEventListener("click", function () {
+                if (userMenu.classList.contains("show")) {
+                    userMenu.classList.remove("show");
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>
